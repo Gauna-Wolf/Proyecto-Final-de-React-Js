@@ -18,7 +18,7 @@ const Item = (producto) => {
                             <small>Stock Disponible: {stock}</small>
                         </section>
                         <footer>
-                            {/*   <Link to={`/item/${id}`} className="Option  btn btn-primary mb-2"> Ver Detalles</Link> */}
+                              <Link to={`/item/${producto.id}`} className="Option  btn btn-primary mb-2"> Ver Detalles</Link>
                         </footer>
                     </div>
                 </div>
