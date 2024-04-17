@@ -6,6 +6,7 @@ import Nosotros from "./components/Nosotros/Nosotros"
 import { CartProvider } from "./context/CartContext"
 import Carrito from "./components/carrito/Carrito"
 import { NotificationProvider } from "./context/Notification"
+import Checkout from "./components/Checkout/Checkout"
 
 
 
@@ -15,7 +16,6 @@ function App() {
     <NotificationProvider>
       <CartProvider>
         <BrowserRouter>
-
           <NavBar />
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
@@ -23,8 +23,8 @@ function App() {
             <Route path="/productos/:categoria" element={<ItemListContainer />} />
             <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/carrito" element={<Carrito />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
-
         </BrowserRouter>
       </CartProvider>
     </NotificationProvider>
