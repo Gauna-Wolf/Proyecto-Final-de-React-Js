@@ -1,6 +1,7 @@
 // NavBar.js
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import CartWidget from '../CartWidget/CartWidget';
 
 const NavBar = () => {
   return (
@@ -27,6 +28,11 @@ const NavBar = () => {
         </li>
         <li className="nav-item">
         <NavLink to={`/productos/notebook`} className={({ isActive }) => isActive ? "nav-link mx-2 pt-2" : "nav-link  mx-2 pb-2"}>Notebooks</NavLink>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <CartWidget/>
         </li>
       </ul>
     </div>

@@ -1,7 +1,12 @@
-import { useState } from "react";
+import React, { useContext, useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
+import { CartContext } from "../../context/CartContext";
+import { useNotification } from "../../context/Notification"; // Importa el hook useNotification
 
 const ItemDetail = ({ item }) => {
+    const { agregarAlCarrito } = useContext(CartContext);
+    const { setNotification } = useNotification(); // Usa el hook useNotification para acceder a setNotification
+
     const [cantidad, setCantidad] = useState(1);
 
     const handleRestar = () => {
@@ -11,16 +16,17 @@ const ItemDetail = ({ item }) => {
     const handleSumar = () => {
         cantidad < item.stock && setCantidad(cantidad + 1);
     };
-    
+
     const handleAgregar = () => {
-        console.log({ ...item, cantidad });
+        agregarAlCarrito(item, cantidad); 
+        setNotification("success", `${cantidad} ${item.titulo} agregado al carrito`); 
     };
 
     return (
         <div className="container">
             <div className="row">
                 <div className="col-md-6">
-                    <img src={item.img} alt={item.name} className="img-fluid" />
+                    <img src={item.img} alt={item.titulo} className="img-fluid" />
                 </div>
                 <div className="col-md-6 p-4" style={{ backgroundColor: "#f8f9fa", boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.1)" }}>
                     <h4>{item.name}</h4>
@@ -29,7 +35,12 @@ const ItemDetail = ({ item }) => {
                         <p>{item.descripcion}</p>
                     </div>
                     <p>$ {item.price}</p>
-                    <ItemCount cantidad={cantidad} handleSumar={handleSumar} handleRestar={handleRestar} handleAgregar={handleAgregar}/>
+                    <ItemCount
+                        cantidad={cantidad}
+                        handleSumar={handleSumar}
+                        handleRestar={handleRestar}
+                        handleAgregar={handleAgregar}
+                    />
                 </div>
             </div>
         </div>
