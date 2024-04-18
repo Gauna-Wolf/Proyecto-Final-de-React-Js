@@ -3,7 +3,7 @@ import ItemList from '../ItemList/ItemList'
 import { collection, getDocs ,query, where} from "firebase/firestore"
 import { db } from '../../firebase/config'
 import { useEffect, useState } from 'react'
-
+import "./ItemListContainer.css"
 const ItemListContainer = () => {
 
   const [productos, setProductos] = useState([])
@@ -28,7 +28,11 @@ const ItemListContainer = () => {
   }, [categoria])
 
   return (
-    <div>
+    <div className='itemListContainer container'>
+      <div>
+        <h1 className='text-center'>CellShop</h1>
+        <hr />
+      </div>
       <ItemList productos={productos} titulo={titulo} ItemList />
     </div>
   )

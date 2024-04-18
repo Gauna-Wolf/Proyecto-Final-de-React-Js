@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../firebase/config';
 import { Link } from 'react-router-dom';
-
+import "./checkout.css"
 const Checkout = () => {
     const [pedidoId, setPedidoId] = useState("");
     const { carrito, precioTotal, vaciarCarrito } = useContext(CartContext)
@@ -31,7 +31,7 @@ const Checkout = () => {
       };
       if (pedidoId) {
         return (
-          <div className="container text-center">
+          <div className="container text-center checkout">
             <h1 className="main-title mt-4">¡Gracias por tu compra!</h1>
             <p >Tu número de pedido es: {pedidoId}</p>
             <Link to="/" className="btn btn-primary  mb-4">Volver a la tienda</Link>
@@ -40,8 +40,11 @@ const Checkout = () => {
       }
   return (
     <div>
-        <div className="container">
+        <div className="container checkout">
         <div className="row">
+          <div>
+            <h2 className='mb-5 text-center'>Completa el formulario para realizar tu compra</h2>
+          </div>
           <div className="col-md-6 order-md-1">
             <form onSubmit={handleSubmit(comprar)}>
               <div className="mb-3">

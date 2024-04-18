@@ -8,7 +8,10 @@ const ItemCount = ({ cantidad, handleRestar, handleSumar, handleAgregar }) => {
                 <p>{cantidad}</p>
                 <button className="btn btn-outline-secondary ms-2" onClick={handleSumar}>+</button>
             </div>
-            <button className="btn btn-primary mt-3" onClick={handleAgregar}>Agregar al carrito</button>
+            <div className='d-flex justify-content-center '>
+            < button className="btn btn-secondary mt-3" onClick={handleAgregar}>Agregar al carrito</button>
+            </div>
+            
         </>
     );
 }

@@ -1,0 +1,24 @@
+.ft{background-image: linear-gradient( 65.9deg,  rgba(85,228,224,1) 5.5%, rgba(75,68,224,0.74) 54.2%, rgba(64,198,238,1) 55.2%, rgba(177,36,224,1) 98.4% );}
+
+
+.iconoInsta:hover {
+    color: rgb(228, 64, 95); 
+    cursor: pointer;
+  }
+  .iconoFace:hover{
+    color:rgb(24, 119, 242);
+    cursor: pointer;
+  }
+
+  .iconoWsp:hover{
+    color: rgb(37, 211, 102);
+    cursor: pointer;
+  }
+
+.contentFooter{
+  text-align: center;
+}
+.footerLine{
+  height: 30px;
+  background-image: linear-gradient(to right, transparent, #11101086, transparent);
+}
